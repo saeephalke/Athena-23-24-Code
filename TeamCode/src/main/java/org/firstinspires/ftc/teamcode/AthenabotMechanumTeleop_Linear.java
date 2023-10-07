@@ -343,7 +343,7 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
                 }
             }
             */
-
+            /*
             if(robot.vacuum1 != null){
                 if(gamepad2.b) {
                     robot.vacuum1.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -381,16 +381,18 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
             }
 
              */
-            /*
 
-            if(robot.box != null){
+
+            if(robot.claw1 != null){
                 if(gamepad2.x)
                 {
-                    robot.box.setPosition(0.0);
+                    robot.claw1.setPosition(0.0);
                 } else if (gamepad2.y){
-                    robot.box.setPosition(1.0);
+                    robot.claw1.setPosition(1.0);
                 }
             }
+
+            /*
 
             if(robot.gate != null)
             {
