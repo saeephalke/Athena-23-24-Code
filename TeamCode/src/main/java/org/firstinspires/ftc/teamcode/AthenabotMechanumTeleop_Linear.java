@@ -386,9 +386,9 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
             if(robot.drone1 != null){
                 if(gamepad2.x)
                 {
-                    robot.drone1.setPosition(0.0);
+                    robot.drone1.setPosition(0.3);
                 } else if (gamepad2.y){
-                    robot.drone1.setPosition(0.1);
+                    robot.drone1.setPosition(0.5);
                 }
             }
 

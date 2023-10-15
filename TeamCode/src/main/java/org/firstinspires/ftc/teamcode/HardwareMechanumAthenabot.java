@@ -297,7 +297,7 @@ public class HardwareMechanumAthenabot
             //v_motor_left_drive.setDirection (DcMotor.Direction.REVERSE);
             drone1 = hwMap.servo.get("drone1");
             if (drone1 != null) {
-                drone1.setPosition(SERVO_DRONE1_MIN);
+                drone1.setPosition(0.3);
             }
 
 
