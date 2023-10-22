@@ -71,8 +71,8 @@ public class HardwareMechanumAthenabot
     public static final double SERVO_PUSH_MIN = 0.0;
     public static final double SERVO_PUSH_MAX = -2.0;
 
-    public static final double SERVO_CLAW1_MIN = 0.0;
-    public static final double SERVO_CLAW1_MAX = 2.0;
+    public static final double SERVO_CLAW1_MIN = -1.0;
+    public static final double SERVO_CLAW1_MAX = 1.0;
     public static final double SERVO_CLAW2_MIN = 0.0;
     public static final double SERVO_CLAW2_MAX = 2.0;
     public static final double SERVO_DRONE1_MIN = 0.0;
@@ -263,7 +263,7 @@ public class HardwareMechanumAthenabot
             //v_motor_left_drive.setDirection (DcMotor.Direction.REVERSE);
             claw1 = hwMap.servo.get("claw1");
             if (claw1 != null) {
-                claw1.setPosition(SERVO_CLAW1_MIN);
+                claw1.setPosition(-1);
             }
 
 
