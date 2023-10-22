@@ -392,6 +392,14 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
                 }
             }
 
+            if(robot.claw1 != null) {
+                if(gamepad2.a){
+                    robot.claw1.setPosition(0);
+                } else if (gamepad2.b) {
+                    robot.claw1.setPosition(1);
+                }
+            }
+
             if(robot.elevator != null) {
                 if(gamepad2.dpad_down) {
                     robot.elevator.setDirection(DcMotorSimple.Direction.REVERSE);

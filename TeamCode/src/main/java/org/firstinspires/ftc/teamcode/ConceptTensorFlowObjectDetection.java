@@ -99,6 +99,11 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
                 telemetry.update();
 
                 // Save CPU resources; can resume streaming when needed.
+                if (gamepad1.dpad_down) {
+                    visionPortal.stopStreaming();
+                } else if (gamepad1.dpad_up) {
+                    visionPortal.resumeStreaming();
+                }
 
                 // Share the CPU.
                 sleep(20);
@@ -129,8 +134,8 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
             // The following default settings are available to un-comment and edit as needed to 
             // set parameters for custom models.
             .setModelLabels(LABELS)
-            .setIsModelTensorFlow2(true)
-            .setIsModelQuantized(true)
+            //.setIsModelTensorFlow2(true)
+            //.setIsModelQuantized(true)
             .setModelInputSize(300)
             .setModelAspectRatio(16.0 / 9.0)
 
@@ -150,15 +155,15 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
         builder.setCameraResolution(new Size(640, 480));
 
         // Enable the RC preview (LiveView).  Set "false" to omit camera monitoring.
-        //builder.enableLiveView(true);
+        builder.enableLiveView(true);
 
         // Set the stream format; MJPEG uses less bandwidth than default YUY2.
-        //builder.setStreamFormat(VisionPortal.StreamFormat.YUY2);
+        builder.setStreamFormat(VisionPortal.StreamFormat.YUY2);
 
         // Choose whether or not LiveView stops if no processors are enabled.
         // If set "true", monitor shows solid orange screen if no processors enabled.
         // If set "false", monitor shows camera view without annotations.
-        //builder.setAutoStopLiveView(false);
+        builder.setAutoStopLiveView(false);
 
         // Set and enable the processor.
         builder.addProcessor(tfod);
@@ -184,13 +189,13 @@ public class ConceptTensorFlowObjectDetection extends LinearOpMode {
 
         // Step through the list of recognitions and display info for each one.
         for (Recognition recognition : currentRecognitions) {
-            double x = (recognition.getLeft() + recognition.getRight()) / 2 ;
-            double y = (recognition.getTop()  + recognition.getBottom()) / 2 ;
+            //double x = (recognition.getLeft() + recognition.getRight()) / 2 ;
+            //double y = (recognition.getTop()  + recognition.getBottom()) / 2 ;
 
             telemetry.addData(""," ");
             telemetry.addData("Image", "%s (%.0f %% Conf.)", recognition.getLabel(), recognition.getConfidence() * 100);
-            telemetry.addData("- Position", "%.0f / %.0f", x, y);
-            telemetry.addData("- Size", "%.0f x %.0f", recognition.getWidth(), recognition.getHeight());
+            //telemetry.addData("- Position", "%.0f / %.0f", x, y);
+            //telemetry.addData("- Size", "%.0f x %.0f", recognition.getWidth(), recognition.getHeight());
         }   // end for() loop
 
     }   // end method telemetryTfod()
