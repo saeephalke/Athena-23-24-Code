@@ -73,6 +73,8 @@ public class BottomBlue extends LinearOpMode {
 
         //bottom left blue, plan: strafe down, then move forwards into storage unit
 
+
+        /*
         strafe(DRIVE_SPEED, -10,10,10,-10,10); //strafe to the right ~1sq
         encoderDrive(DRIVE_SPEED, 10, 10,10); //go forward to park ~1sq
         encoderDrive(DRIVE_SPEED, -10, -10, 10); //go backwards ~0.5sq
@@ -83,6 +85,10 @@ public class BottomBlue extends LinearOpMode {
         encoderDrive(DRIVE_SPEED, -10, -10, 10); //go backwards ~0.5sq
         encoderDrive(DRIVE_SPEED, -10, 10, 10); //turn 90 degrees left
         encoderDrive(DRIVE_SPEED, 10, 10, 10); //go into warehouse ~2sq
+        */
+
+
+
 
         /*
         strafe(DRIVE_SPEED, -10,10,10,-10,10);

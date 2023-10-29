@@ -85,7 +85,7 @@ public class HardwareMechanumAthenabot
     public static final double intake2_motor_power = 1.00;
     public static final double vacuum1_power = 1.00;
     public static final double guide_power = 1.00;
-    public static final double elevator_power = 1.00;
+    public static final double elevator_power = 0.50;
 
     public static final double slide1_power = 1.00;
 
@@ -411,6 +411,7 @@ public class HardwareMechanumAthenabot
             elevator.setDirection(DcMotor.Direction.FORWARD);
             elevator.setPower(0);
             elevator.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+            elevator.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         }
 
         if (slide1 != null){
