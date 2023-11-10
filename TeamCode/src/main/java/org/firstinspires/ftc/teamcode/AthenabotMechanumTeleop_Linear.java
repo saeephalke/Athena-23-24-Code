@@ -394,9 +394,9 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
 
             if(robot.claw1 != null) {
                 if(gamepad2.a){
-                    robot.claw1.setPosition(0);
+                    robot.claw1.setPosition(0.2);
                 } else if (gamepad2.b) {
-                    robot.claw1.setPosition(0);
+                    robot.claw1.setPosition(0.5);
                 }
             }
 
@@ -414,16 +414,8 @@ public class AthenabotMechanumTeleop_Linear extends LinearOpMode {
             }
 
             if(robot.guide != null) {
-                if(gamepad2.dpad_right) {
-                    robot.guide.setDirection(DcMotorSimple.Direction.REVERSE);
-                    robot.guide.setPower(robot.guide_power);
-                } else if (gamepad2.dpad_left) {
-                    robot.guide.setDirection(DcMotorSimple.Direction.FORWARD);
-                    robot.guide.setPower(robot.guide_power);
-
-                } else {
-                    robot.guide.setPower(0.0);
-                }
+                robot.guide.setDirection(DcMotorSimple.Direction.FORWARD);
+                robot.guide.setPower(robot.guide_power);
             }
 
             /*

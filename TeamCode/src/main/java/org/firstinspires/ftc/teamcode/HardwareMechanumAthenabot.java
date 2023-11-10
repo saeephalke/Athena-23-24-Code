@@ -263,7 +263,7 @@ public class HardwareMechanumAthenabot
             //v_motor_left_drive.setDirection (DcMotor.Direction.REVERSE);
             claw1 = hwMap.servo.get("claw1");
             if (claw1 != null) {
-                claw1.setPosition(0.5);
+                claw1.setPosition(0.2);
             }
 
 
